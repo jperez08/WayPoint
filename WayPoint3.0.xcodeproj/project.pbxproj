@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A6341EF240F3F5600188019 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6341EE240F3F5600188019 /* AppDelegate.swift */; };
+		3A6341F1240F3F5600188019 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6341F0240F3F5600188019 /* SceneDelegate.swift */; };
+		3A6341F3240F3F5600188019 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6341F2240F3F5600188019 /* ViewController.swift */; };
+		3A6341F6240F3F5600188019 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6341F4240F3F5600188019 /* Main.storyboard */; };
+		3A6341F8240F3F5A00188019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6341F7240F3F5A00188019 /* Assets.xcassets */; };
+		3A6341FB240F3F5A00188019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6341F9240F3F5A00188019 /* LaunchScreen.storyboard */; };
+		3A634206240F3F5A00188019 /* WayPoint3_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A634205240F3F5A00188019 /* WayPoint3_0Tests.swift */; };
+		3A634211240F3F5A00188019 /* WayPoint3_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A634210240F3F5A00188019 /* WayPoint3_0UITests.swift */; };
+		3A634221240F4EDD00188019 /* POIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A634220240F4EDD00188019 /* POIs.swift */; };
+		3A634223241228C000188019 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A634222241228C000188019 /* ARViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A634202240F3F5A00188019 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A6341E3240F3F5600188019 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A6341EA240F3F5600188019;
+			remoteInfo = WayPoint3.0;
+		};
+		3A63420D240F3F5A00188019 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A6341E3240F3F5600188019 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A6341EA240F3F5600188019;
+			remoteInfo = WayPoint3.0;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A6341EB240F3F5600188019 /* WayPoint3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WayPoint3.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A6341EE240F3F5600188019 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A6341F0240F3F5600188019 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3A6341F2240F3F5600188019 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A6341F5240F3F5600188019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A6341F7240F3F5A00188019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A6341FA240F3F5A00188019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A6341FC240F3F5A00188019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A634201240F3F5A00188019 /* WayPoint3.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WayPoint3.0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A634205240F3F5A00188019 /* WayPoint3_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayPoint3_0Tests.swift; sourceTree = "<group>"; };
+		3A634207240F3F5A00188019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A63420C240F3F5A00188019 /* WayPoint3.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WayPoint3.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A634210240F3F5A00188019 /* WayPoint3_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayPoint3_0UITests.swift; sourceTree = "<group>"; };
+		3A634212240F3F5A00188019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A634220240F4EDD00188019 /* POIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIs.swift; sourceTree = "<group>"; };
+		3A634222241228C000188019 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A6341E8240F3F5600188019 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A6341FE240F3F5A00188019 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A634209240F3F5A00188019 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A6341E2240F3F5600188019 = {
+			isa = PBXGroup;
+			children = (
+				3A6341ED240F3F5600188019 /* WayPoint3.0 */,
+				3A634204240F3F5A00188019 /* WayPoint3.0Tests */,
+				3A63420F240F3F5A00188019 /* WayPoint3.0UITests */,
+				3A6341EC240F3F5600188019 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A6341EC240F3F5600188019 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A6341EB240F3F5600188019 /* WayPoint3.0.app */,
+				3A634201240F3F5A00188019 /* WayPoint3.0Tests.xctest */,
+				3A63420C240F3F5A00188019 /* WayPoint3.0UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A6341ED240F3F5600188019 /* WayPoint3.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3A6341EE240F3F5600188019 /* AppDelegate.swift */,
+				3A6341F0240F3F5600188019 /* SceneDelegate.swift */,
+				3A6341F2240F3F5600188019 /* ViewController.swift */,
+				3A634222241228C000188019 /* ARViewController.swift */,
+				3A6341F4240F3F5600188019 /* Main.storyboard */,
+				3A6341F7240F3F5A00188019 /* Assets.xcassets */,
+				3A6341F9240F3F5A00188019 /* LaunchScreen.storyboard */,
+				3A6341FC240F3F5A00188019 /* Info.plist */,
+				3A634220240F4EDD00188019 /* POIs.swift */,
+			);
+			path = WayPoint3.0;
+			sourceTree = "<group>";
+		};
+		3A634204240F3F5A00188019 /* WayPoint3.0Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3A634205240F3F5A00188019 /* WayPoint3_0Tests.swift */,
+				3A634207240F3F5A00188019 /* Info.plist */,
+			);
+			path = WayPoint3.0Tests;
+			sourceTree = "<group>";
+		};
+		3A63420F240F3F5A00188019 /* WayPoint3.0UITests */ = {
+			isa = PBXGroup;
+			children = (
+				3A634210240F3F5A00188019 /* WayPoint3_0UITests.swift */,
+				3A634212240F3F5A00188019 /* Info.plist */,
+			);
+			path = WayPoint3.0UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A6341EA240F3F5600188019 /* WayPoint3.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A634215240F3F5A00188019 /* Build configuration list for PBXNativeTarget "WayPoint3.0" */;
+			buildPhases = (
+				3A6341E7240F3F5600188019 /* Sources */,
+				3A6341E8240F3F5600188019 /* Frameworks */,
+				3A6341E9240F3F5600188019 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WayPoint3.0;
+			productName = WayPoint3.0;
+			productReference = 3A6341EB240F3F5600188019 /* WayPoint3.0.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A634200240F3F5A00188019 /* WayPoint3.0Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A634218240F3F5A00188019 /* Build configuration list for PBXNativeTarget "WayPoint3.0Tests" */;
+			buildPhases = (
+				3A6341FD240F3F5A00188019 /* Sources */,
+				3A6341FE240F3F5A00188019 /* Frameworks */,
+				3A6341FF240F3F5A00188019 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A634203240F3F5A00188019 /* PBXTargetDependency */,
+			);
+			name = WayPoint3.0Tests;
+			productName = WayPoint3.0Tests;
+			productReference = 3A634201240F3F5A00188019 /* WayPoint3.0Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A63420B240F3F5A00188019 /* WayPoint3.0UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A63421B240F3F5A00188019 /* Build configuration list for PBXNativeTarget "WayPoint3.0UITests" */;
+			buildPhases = (
+				3A634208240F3F5A00188019 /* Sources */,
+				3A634209240F3F5A00188019 /* Frameworks */,
+				3A63420A240F3F5A00188019 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A63420E240F3F5A00188019 /* PBXTargetDependency */,
+			);
+			name = WayPoint3.0UITests;
+			productName = WayPoint3.0UITests;
+			productReference = 3A63420C240F3F5A00188019 /* WayPoint3.0UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A6341E3240F3F5600188019 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = SCU;
+				TargetAttributes = {
+					3A6341EA240F3F5600188019 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					3A634200240F3F5A00188019 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 3A6341EA240F3F5600188019;
+					};
+					3A63420B240F3F5A00188019 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 3A6341EA240F3F5600188019;
+					};
+				};
+			};
+			buildConfigurationList = 3A6341E6240F3F5600188019 /* Build configuration list for PBXProject "WayPoint3.0" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A6341E2240F3F5600188019;
+			productRefGroup = 3A6341EC240F3F5600188019 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A6341EA240F3F5600188019 /* WayPoint3.0 */,
+				3A634200240F3F5A00188019 /* WayPoint3.0Tests */,
+				3A63420B240F3F5A00188019 /* WayPoint3.0UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A6341E9240F3F5600188019 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A6341FB240F3F5A00188019 /* LaunchScreen.storyboard in Resources */,
+				3A6341F8240F3F5A00188019 /* Assets.xcassets in Resources */,
+				3A6341F6240F3F5600188019 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A6341FF240F3F5A00188019 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A63420A240F3F5A00188019 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A6341E7240F3F5600188019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A634221240F4EDD00188019 /* POIs.swift in Sources */,
+				3A6341F3240F3F5600188019 /* ViewController.swift in Sources */,
+				3A6341EF240F3F5600188019 /* AppDelegate.swift in Sources */,
+				3A6341F1240F3F5600188019 /* SceneDelegate.swift in Sources */,
+				3A634223241228C000188019 /* ARViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A6341FD240F3F5A00188019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A634206240F3F5A00188019 /* WayPoint3_0Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A634208240F3F5A00188019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A634211240F3F5A00188019 /* WayPoint3_0UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A634203240F3F5A00188019 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A6341EA240F3F5600188019 /* WayPoint3.0 */;
+			targetProxy = 3A634202240F3F5A00188019 /* PBXContainerItemProxy */;
+		};
+		3A63420E240F3F5A00188019 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A6341EA240F3F5600188019 /* WayPoint3.0 */;
+			targetProxy = 3A63420D240F3F5A00188019 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A6341F4240F3F5600188019 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A6341F5240F3F5600188019 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A6341F9240F3F5A00188019 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A6341FA240F3F5A00188019 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A634213240F3F5A00188019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A634214240F3F5A00188019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A634216240F3F5A00188019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFFJ526A4V;
+				INFOPLIST_FILE = WayPoint3.0/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = coding.LocationApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A634217240F3F5A00188019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFFJ526A4V;
+				INFOPLIST_FILE = WayPoint3.0/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = coding.LocationApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3A634219240F3F5A00188019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFFJ526A4V;
+				INFOPLIST_FILE = WayPoint3.0Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "coding.WayPoint3-0Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WayPoint3.0.app/WayPoint3.0";
+			};
+			name = Debug;
+		};
+		3A63421A240F3F5A00188019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFFJ526A4V;
+				INFOPLIST_FILE = WayPoint3.0Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "coding.WayPoint3-0Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WayPoint3.0.app/WayPoint3.0";
+			};
+			name = Release;
+		};
+		3A63421C240F3F5A00188019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFFJ526A4V;
+				INFOPLIST_FILE = WayPoint3.0UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "coding.WayPoint3-0UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WayPoint3.0;
+			};
+			name = Debug;
+		};
+		3A63421D240F3F5A00188019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFFJ526A4V;
+				INFOPLIST_FILE = WayPoint3.0UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "coding.WayPoint3-0UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WayPoint3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A6341E6240F3F5600188019 /* Build configuration list for PBXProject "WayPoint3.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A634213240F3F5A00188019 /* Debug */,
+				3A634214240F3F5A00188019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A634215240F3F5A00188019 /* Build configuration list for PBXNativeTarget "WayPoint3.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A634216240F3F5A00188019 /* Debug */,
+				3A634217240F3F5A00188019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A634218240F3F5A00188019 /* Build configuration list for PBXNativeTarget "WayPoint3.0Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A634219240F3F5A00188019 /* Debug */,
+				3A63421A240F3F5A00188019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A63421B240F3F5A00188019 /* Build configuration list for PBXNativeTarget "WayPoint3.0UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A63421C240F3F5A00188019 /* Debug */,
+				3A63421D240F3F5A00188019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A6341E3240F3F5600188019 /* Project object */;
+}
