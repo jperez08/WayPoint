@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 import CoreLocation
 import UIKit
 import SceneKit
@@ -15,19 +16,33 @@ import ARKit
 //  ,ARSCNViewDelegate
 class ARViewController: UIViewController ,ARSCNViewDelegate  {
 
+   
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var sceneView: ARSCNView!
-    //@IBOutlet weak var removePlanes: UIButton!
     @IBOutlet weak var removePlanes: UIButton!
+    
+    
+    let locationManager = CLLocationManager()
+    func checkLocationAuthorizationStatus() {
+      if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+        mapView.showsUserLocation = true
+      } else {
+        locationManager.requestWhenInUseAuthorization()
+      }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
+      checkLocationAuthorizationStatus()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        // Set the view's delegate
-        //-----sceneView.delegate = self
+        mapView.userTrackingMode = .follow
         
+        mapView.delegate = self as? MKMapViewDelegate
         
-        // Set the scene to the view
-        //sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {

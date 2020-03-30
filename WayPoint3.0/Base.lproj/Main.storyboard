@@ -44,24 +44,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hyg-xt-izy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hyg-xt-izy">
+                                <rect key="frame" x="0.0" y="8" width="414" height="846"/>
+                                <viewLayoutGuide key="safeArea" id="Nqs-Ga-B0l"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfA-Xm-He3">
-                                <rect key="frame" x="112" y="32" width="191" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfA-Xm-He3">
+                                <rect key="frame" x="112" y="804" width="191" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="Sjy-1P-AMA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Remove Planes"/>
                                 <connections>
                                     <action selector="resetClicked:" destination="NkP-xl-ucs" eventType="touchUpInside" id="ZhZ-gh-FyM"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bCE-VL-OaZ">
+                                <rect key="frame" x="0.0" y="8" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Hyg-xt-izy" firstAttribute="leading" secondItem="b7O-8l-GPn" secondAttribute="leading" id="GMA-lV-sVw"/>
+                            <constraint firstItem="b7O-8l-GPn" firstAttribute="bottom" secondItem="bfA-Xm-He3" secondAttribute="bottom" constant="29" id="KD3-ce-7YB"/>
+                            <constraint firstItem="bfA-Xm-He3" firstAttribute="centerX" secondItem="Hyg-xt-izy" secondAttribute="centerX" id="Sly-EK-Za3"/>
+                            <constraint firstItem="Hyg-xt-izy" firstAttribute="bottom" secondItem="b7O-8l-GPn" secondAttribute="bottom" id="Ugs-6R-Q7J"/>
+                            <constraint firstItem="bfA-Xm-He3" firstAttribute="centerX" secondItem="poJ-DT-fth" secondAttribute="centerX" id="rwt-Jg-Hvm"/>
+                            <constraint firstItem="bfA-Xm-He3" firstAttribute="leading" secondItem="b7O-8l-GPn" secondAttribute="leading" constant="112" id="wFK-wJ-OvD"/>
+                            <constraint firstItem="Hyg-xt-izy" firstAttribute="top" secondItem="poJ-DT-fth" secondAttribute="topMargin" constant="-36" id="zxw-jL-XhY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b7O-8l-GPn"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="bCE-VL-OaZ" id="0fu-A3-2Ei"/>
                         <outlet property="removePlanes" destination="bfA-Xm-He3" id="y3N-yz-zGk"/>
                         <outlet property="sceneView" destination="Hyg-xt-izy" id="qKa-fS-on7"/>
                     </connections>

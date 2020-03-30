@@ -133,10 +133,10 @@ extension ViewController: MKMapViewDelegate {
     }
     return view
   }
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl) {
-      //let location = view.annotation as! Artwork
-      //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+
         let storyboard = UIStoryboard(name: "Main", bundle:nil)
         let viewController = storyboard.instantiateViewController(withIdentifier : "ARV")
         self.present(viewController, animated: true)
