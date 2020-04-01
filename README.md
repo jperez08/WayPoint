@@ -1,2 +1,0 @@
-# WayPoint
-Senior Design Project
