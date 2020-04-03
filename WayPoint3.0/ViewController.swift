@@ -111,21 +111,24 @@ class ViewController: UIViewController {
     }
 }
 
+
 extension ViewController: MKMapViewDelegate {
-  // 1
+  
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    // 2
+    
+    
     guard let annotation = annotation as? POIs else { return nil }
-    // 3
+    
+    
     let identifier = "marker"
     var view: MKMarkerAnnotationView
-    // 4
+    
     if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
       as? MKMarkerAnnotationView {
       dequeuedView.annotation = annotation
       view = dequeuedView
     } else {
-      // 5
+      
       view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
       view.canShowCallout = true
       view.calloutOffset = CGPoint(x: -5, y: 5)
@@ -134,12 +137,22 @@ extension ViewController: MKMapViewDelegate {
     return view
   }
     
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl) {
-
+        
         let storyboard = UIStoryboard(name: "Main", bundle:nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier : "ARV")
+        
+        let viewController = storyboard.instantiateViewController(withIdentifier : "ARV")as! ARViewController
+        
+        
+        viewController.dest = view.annotation as? POIs
+        
         self.present(viewController, animated: true)
+        
+        
       //location.mapItem().openInMaps(launchOptions: launchOptions)
     }
+    
+    
 }

@@ -21,6 +21,9 @@ class ARViewController: UIViewController ,ARSCNViewDelegate  {
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var removePlanes: UIButton!
     
+    //var dest = POIs(coordinate: CLLocationCoordinate2D(latitude: Double("")!, longitude: Double("")! ))
+    
+    var dest: POIs?
     
     let locationManager = CLLocationManager()
     func checkLocationAuthorizationStatus() {
@@ -38,11 +41,12 @@ class ARViewController: UIViewController ,ARSCNViewDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        //show the user's current location
         mapView.userTrackingMode = .follow
         
         mapView.delegate = self as? MKMapViewDelegate
-        
+        mapView.addAnnotation(dest!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
