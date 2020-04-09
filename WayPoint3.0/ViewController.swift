@@ -36,6 +36,7 @@ class ViewController: UIViewController {
       super.viewDidAppear(animated)
       checkLocationAuthorizationStatus()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //set default view to SCU
@@ -107,56 +108,27 @@ class ViewController: UIViewController {
                            coordinate: CLLocationCoordinate2D(latitude: 37.350438, longitude: -121.939261))
         mapView.addAnnotation(Vari)
        
-        //this gets directions.
-        print("directions function below")
-        let location = CLLocationCoordinate2D(latitude:37.3490062, longitude: -121.9395670) // this is center location...
-           let request = createDirectionRequest(from: location) //change this to be USER location.
-        print("got request")
-           let directions = MKDirections(request: request)
-           directions.calculate{ (response, error) in
-            print("got directions")
-               guard let response = response else {return}
-            print("got route")
-               for route in response.routes{
-                self.mapView.addOverlay(route.polyline)
-                //self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
-               }
-            print("showing route")
-               
-           }
     }
-}
-//change this function to allow for different destinations!!
-func createDirectionRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request {
-    let destinationCoordinate = CLLocationCoordinate2D(latitude: 37.3501323, longitude: -121.9425096 )
-    let startingLocation = MKPlacemark(coordinate: coordinate)
-    let destination = MKPlacemark(coordinate: destinationCoordinate)
-    
-    let request = MKDirections.Request()
-    request.source = MKMapItem(placemark: startingLocation)
-    request.destination = MKMapItem(placemark: destination)
-    request.transportType = .walking
-    request.requestsAlternateRoutes = false
-    return request;
-    
 }
 
 
 extension ViewController: MKMapViewDelegate {
-  // 1
+  
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    // 2
+    
+    
     guard let annotation = annotation as? POIs else { return nil }
-    // 3
+    
+    
     let identifier = "marker"
     var view: MKMarkerAnnotationView
-    // 4
+    
     if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
       as? MKMarkerAnnotationView {
       dequeuedView.annotation = annotation
       view = dequeuedView
     } else {
-      // 5
+      
       view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
       view.canShowCallout = true
       view.calloutOffset = CGPoint(x: -5, y: 5)
@@ -165,17 +137,22 @@ extension ViewController: MKMapViewDelegate {
     return view
   }
     
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl) {
+        
         let storyboard = UIStoryboard(name: "Main", bundle:nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier : "ARV")
+        
+        let viewController = storyboard.instantiateViewController(withIdentifier : "ARV")as! ARViewController
+        
+        
+        viewController.dest = view.annotation as? POIs
+        
         self.present(viewController, animated: true)
+        
+        
       //location.mapItem().openInMaps(launchOptions: launchOptions)
     }
     
-    func mapView(_ mapView:MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-        renderer.strokeColor = .blue
-        return renderer
-    }
+    
 }

@@ -14,34 +14,94 @@ import SceneKit
 import ARKit
 
 //  ,ARSCNViewDelegate
-class ARViewController: UIViewController ,ARSCNViewDelegate  {
+class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDelegate  {
 
    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var removePlanes: UIButton!
     
+    //var dest = POIs(coordinate: CLLocationCoordinate2D(latitude: Double("")!, longitude: Double("")! ))
     
+    var dest: POIs?
+    var currentLocation = CLLocation()
     let locationManager = CLLocationManager()
+    
+    
     func checkLocationAuthorizationStatus() {
       if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
         mapView.showsUserLocation = true
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        
       } else {
         locationManager.requestWhenInUseAuthorization()
       }
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {return}
+        currentLocation = location
+    }
+    
+    
+    
+    
+    func createDirectionRequest() -> MKDirections.Request {
+           let destinationCoordinate = dest!.coordinate
+           let startinglocation = MKPlacemark(coordinate: currentLocation.coordinate)
+           let destinationlocation = MKPlacemark(coordinate: destinationCoordinate)
+           
+           let request = MKDirections.Request()
+           request.source = MKMapItem(placemark: startinglocation)
+           request.destination = MKMapItem(placemark: destinationlocation)
+           request.transportType = .automobile
+           request.requestsAlternateRoutes = false
+           return request
+       }
+    
+    
+    
+    
     override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       checkLocationAuthorizationStatus()
+      print( "latitude = ", currentLocation.coordinate.latitude, "   longitude = " , currentLocation.coordinate.longitude)
+     //got user's current coordinates.
+        
+        // ******* TEST FOR GETTING ORIENTATION FOR TRUE NORTH ******* //
+        let heading = locationManager.headingOrientation.rawValue //Jose Please look at the headingOrientation/heading in locationManager (CLLocationManager). It is supposed to give a value that determines what orientation the phone is facing.
+        print("  current orientation: " , heading);
+        //******* END TEST *********//
+        
+    //directions right here
+        let request = createDirectionRequest()
+        let directions = MKDirections(request:request)
+        directions.calculate{ (response, error) in
+        print("got directions")
+           guard let response = response else {return}
+        print("got route")
+           for route in response.routes{
+            self.mapView.addOverlay(route.polyline) //finally works...
+            for step in route.steps{
+                print(step.distance)
+                print(step.instructions)
+            }
+            //self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+           }
+        print("showing route")
+        }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        //show the user's current location
         mapView.userTrackingMode = .follow
         
-        mapView.delegate = self as? MKMapViewDelegate
+        mapView.delegate = self as MKMapViewDelegate
+        mapView.addAnnotation(dest!)
+        checkLocationAuthorizationStatus()
         
     }
     
@@ -140,8 +200,16 @@ class ARViewController: UIViewController ,ARSCNViewDelegate  {
          let z = CGFloat(planeAnchor.center.z)
          planeNode.position = SCNVector3(x, y, z)
         }
+    
+      
+}
+extension ARViewController: MKMapViewDelegate{
+    func mapView(_ mapView:MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        renderer.strokeColor = .blue
+        return renderer
     }
-
+}
     extension float4x4 {
         var translation: SIMD3<Float> {
             let translation = self.columns.3
