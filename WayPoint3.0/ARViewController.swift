@@ -21,7 +21,7 @@ class ARViewController: UIViewController ,ARSCNViewDelegate  {
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var removePlanes: UIButton!
     
-    //var dest = POIs(coordinate: CLLocationCoordinate2D(latitude: Double("")!, longitude: Double("")! ))
+    
     
     var dest: POIs?
     
