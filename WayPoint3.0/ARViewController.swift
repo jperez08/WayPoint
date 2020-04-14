@@ -16,7 +16,7 @@ import ARKit
 //  ,ARSCNViewDelegate
 class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDelegate  {
 
-   
+    @IBOutlet weak var directionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var removePlanes: UIButton!
@@ -40,11 +40,11 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
       }
     }
     
+    //modify
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {return}
         currentLocation = location
     }
-    
     
     
     
@@ -63,7 +63,6 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
     
     
     
-    
     override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       checkLocationAuthorizationStatus()
@@ -71,7 +70,11 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
      //got user's current coordinates.
         
         // ******* TEST FOR GETTING ORIENTATION FOR TRUE NORTH ******* //
-        let heading = locationManager.headingOrientation.rawValue //Jose Please look at the headingOrientation/heading in locationManager (CLLocationManager). It is supposed to give a value that determines what orientation the phone is facing.
+       
+        let heading = locationManager.headingOrientation.rawValue
+        //heading.startUpdatingHeadin
+        //Jose Please look at the headingOrientation/heading in locationManager (CLLocationManager). It is supposed to give a value that determines what orientation the phone is facing.
+        //let heading =
         print("  current orientation: " , heading);
         //******* END TEST *********//
         
@@ -97,10 +100,11 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
         super.viewDidLoad()
         
         //show the user's current location
-        mapView.userTrackingMode = .follow
+        mapView.userTrackingMode = .followWithHeading
         
         mapView.delegate = self as MKMapViewDelegate
         mapView.addAnnotation(dest!)
+        mapView.showsCompass = true
         checkLocationAuthorizationStatus()
         
     }
@@ -203,6 +207,8 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
     
       
 }
+
+//modify
 extension ARViewController: MKMapViewDelegate{
     func mapView(_ mapView:MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
@@ -225,6 +231,7 @@ extension ARViewController: MKMapViewDelegate{
 
 let locationManager: CLLocationManager = {
   $0.requestWhenInUseAuthorization()
+  $0.startUpdatingLocation()
   $0.startUpdatingHeading()
   return $0
 }(CLLocationManager())
