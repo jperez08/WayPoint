@@ -107,6 +107,12 @@ class ViewController: UIViewController {
                            locationName: "SCU",
                            coordinate: CLLocationCoordinate2D(latitude: 37.350438, longitude: -121.939261))
         mapView.addAnnotation(Vari)
+        
+        //annotation for testing purposes
+        let Corner = POIs(title: "Corner House",
+                           locationName: "Sj",
+                           coordinate: CLLocationCoordinate2D(latitude: 37.2959292, longitude: -121.8381747))
+        mapView.addAnnotation(Corner)
        
     }
 }
