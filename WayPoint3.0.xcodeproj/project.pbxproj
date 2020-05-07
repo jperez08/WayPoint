@@ -17,6 +17,7 @@
 		3A634211240F3F5A00188019 /* WayPoint3_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A634210240F3F5A00188019 /* WayPoint3_0UITests.swift */; };
 		3A634221240F4EDD00188019 /* POIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A634220240F4EDD00188019 /* POIs.swift */; };
 		3A634223241228C000188019 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A634222241228C000188019 /* ARViewController.swift */; };
+		F62AC5202464BDB5003A9858 /* 3D Objects in Resources */ = {isa = PBXBuildFile; fileRef = F62AC51F2464BDB5003A9858 /* 3D Objects */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3A634212240F3F5A00188019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A634220240F4EDD00188019 /* POIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIs.swift; sourceTree = "<group>"; };
 		3A634222241228C000188019 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		F62AC51F2464BDB5003A9858 /* 3D Objects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "3D Objects"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		3A6341ED240F3F5600188019 /* WayPoint3.0 */ = {
 			isa = PBXGroup;
 			children = (
+				F62AC51F2464BDB5003A9858 /* 3D Objects */,
 				3A6341EE240F3F5600188019 /* AppDelegate.swift */,
 				3A6341F0240F3F5600188019 /* SceneDelegate.swift */,
 				3A6341F2240F3F5600188019 /* ViewController.swift */,
@@ -241,6 +244,7 @@
 				3A6341FB240F3F5A00188019 /* LaunchScreen.storyboard in Resources */,
 				3A6341F8240F3F5A00188019 /* Assets.xcassets in Resources */,
 				3A6341F6240F3F5600188019 /* Main.storyboard in Resources */,
+				F62AC5202464BDB5003A9858 /* 3D Objects in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,13 +447,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UFFJ526A4V;
+				DEVELOPMENT_TEAM = 37A2H268MP;
 				INFOPLIST_FILE = WayPoint3.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = coding.LocationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = coding.LocationAppss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -461,13 +465,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UFFJ526A4V;
+				DEVELOPMENT_TEAM = 37A2H268MP;
 				INFOPLIST_FILE = WayPoint3.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = coding.LocationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = coding.LocationAppss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

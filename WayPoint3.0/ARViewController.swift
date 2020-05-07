@@ -47,7 +47,8 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
         locationManager.requestWhenInUseAuthorization()
       }
     }
-    
+
+   
     //modify
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
@@ -146,6 +147,7 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
         mapView.showsCompass = true
         checkLocationAuthorizationStatus()
         
+        
     }
 
     
@@ -160,6 +162,7 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
         
         sceneView.delegate = self
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        addGestures()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -169,7 +172,7 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
         sceneView.session.pause()
     }
     
-  
+
     @IBAction func resetClicked(_ sender: Any) {
         
         //planeAnchor.removeAll() //need to figure out
@@ -243,7 +246,42 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
          let y = CGFloat(planeAnchor.center.y)
          let z = CGFloat(planeAnchor.center.z)
          planeNode.position = SCNVector3(x, y, z)
+        
         }
+    func addGestures () {
+        let tapped = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        
+        sceneView.addGestureRecognizer(tapped)
+    }
+    
+    @objc func tapGesture (sender: UITapGestureRecognizer) {
+        
+        let location = sender.location(in: sceneView)
+        let hitTest = sceneView.hitTest(location, types: .existingPlaneUsingExtent)
+        //arkit hitTest documentation, not options we need for types https://developer.apple.com/documentation/arkit/arscnview/2875544-hittest
+        //think the location argument can be mapped to the polyline that kunal created
+        if hitTest.isEmpty {
+            print("No Plane Detected")
+            return
+        } else {
+            
+            let scene = SCNScene(named: "ship.scn", inDirectory: "3D Objects")!
+            let node = scene.rootNode.childNode(withName: "ship", recursively: false)
+            
+            
+            let columns = hitTest.first?.worldTransform.columns.3
+            
+            node!.position = SCNVector3(x: columns!.x, y: columns!.y, z: columns!.z)
+            
+            sceneView.scene.rootNode.addChildNode(node!)
+            
+            sceneView.scene.rootNode.enumerateChildNodes { (child, _) in
+                if child.name == "MeshNode" || child.name == "TextNode" {
+                    child.removeFromParentNode()
+                }
+            }
+        }
+    }
     
       
 }
