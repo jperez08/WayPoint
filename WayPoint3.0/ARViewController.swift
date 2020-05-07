@@ -12,14 +12,22 @@ import CoreLocation
 import UIKit
 import SceneKit
 import ARKit
+import AVFoundation
 
 //  ,ARSCNViewDelegate
 class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDelegate  {
 
-   
+    @IBOutlet weak var directionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var removePlanes: UIButton!
+    
+    var steps = [MKRoute.Step]() // empty array ADDED
+    var currentCoordinate: CLLocationCoordinate2D!
+    
+    let speechSynthesizer = AVSpeechSynthesizer()
+    
+    var stepCounter = 0
     
     //var dest = POIs(coordinate: CLLocationCoordinate2D(latitude: Double("")!, longitude: Double("")! ))
     
@@ -32,7 +40,7 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
       if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
         mapView.showsUserLocation = true
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.startUpdatingLocation()
         
       } else {
@@ -40,11 +48,33 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
       }
     }
     
+    //modify
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
         guard let location = locations.last else {return}
         currentLocation = location
+        mapView.userTrackingMode = .followWithHeading //added -----
     }
     
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+          print("ENTERED")
+          stepCounter += 1
+          if stepCounter < steps.count {
+              let currentStep = steps[stepCounter]
+              let message = "In \(currentStep.distance) meters, \(currentStep.instructions)"
+              directionLabel.text = message
+              let speechUtterance = AVSpeechUtterance(string: message)
+              speechSynthesizer.speak(speechUtterance)
+          } else {
+              let message = "Arrived at destination"
+              directionLabel.text = message
+              let speechUtterance = AVSpeechUtterance(string: message)
+              speechSynthesizer.speak(speechUtterance)
+              stepCounter = 0
+              locationManager.monitoredRegions.forEach({ self.locationManager.stopMonitoring(for: $0) })
+              
+          }
+      }
     
     
     
@@ -62,8 +92,6 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
        }
     
     
-    
-    
     override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       checkLocationAuthorizationStatus()
@@ -71,39 +99,55 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
      //got user's current coordinates.
         
         // ******* TEST FOR GETTING ORIENTATION FOR TRUE NORTH ******* //
-        let heading = locationManager.headingOrientation.rawValue //Jose Please look at the headingOrientation/heading in locationManager (CLLocationManager). It is supposed to give a value that determines what orientation the phone is facing.
+       
+        let heading = locationManager.headingOrientation.rawValue
+        //heading.startUpdatingHeadin
+        //Jose Please look at the headingOrientation/heading in locationManager (CLLocationManager). It is supposed to give a value that determines what orientation the phone is facing.
+        //let heading =
         print("  current orientation: " , heading);
         //******* END TEST *********//
         
-    //directions right here
+    //------directions right here
         let request = createDirectionRequest()
         let directions = MKDirections(request:request)
         directions.calculate{ (response, error) in
         print("got directions")
-           guard let response = response else {return}
+            guard let response = response else {return}
+            guard let primaryRoute = response.routes.first else {return}
+            self.steps = primaryRoute.steps //saved steps to access outside ADDED!!!
+            self.mapView.addOverlay(primaryRoute.polyline)
+            self.locationManager.monitoredRegions.forEach({self.locationManager.stopMonitoring(for: $0)})
         print("got route")
-           for route in response.routes{
-            self.mapView.addOverlay(route.polyline) //finally works...
-            for step in route.steps{
-                print(step.distance)
+            for i in 0 ..< primaryRoute.steps.count{
+
+                let step = primaryRoute.steps[i]
                 print(step.instructions)
+                print(step.distance)
+                let region = CLCircularRegion(center: step.polyline.coordinate, radius: 20, identifier: "\(i)")
+                self.locationManager.startMonitoring(for: region)
+                let circle = MKCircle(center: region.center, radius: region.radius)
+                self.mapView.addOverlay(circle)
             }
-            //self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
-           }
-        print("showing route")
+            let initMessage = "In \(self.steps[0].distance) meters, \(self.steps[0].instructions) then in \(self.steps[1].distance) meters, \(self.steps[1].instructions)."
+            self.directionLabel.text = initMessage
+            let speechUtterance = AVSpeechUtterance(string: initMessage)
+            self.speechSynthesizer.speak(speechUtterance)
+            self.stepCounter += 1
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //show the user's current location
-        mapView.userTrackingMode = .follow
+        //mapView.userTrackingMode = .followWithHeading
         
         mapView.delegate = self as MKMapViewDelegate
         mapView.addAnnotation(dest!)
+        mapView.showsCompass = true
         checkLocationAuthorizationStatus()
         
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -203,13 +247,28 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
     
       
 }
+
+//modify
 extension ARViewController: MKMapViewDelegate{
     func mapView(_ mapView:MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-        renderer.strokeColor = .blue
-        return renderer
+        if overlay is MKPolyline{
+            let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+            renderer.strokeColor = .blue
+            return renderer
+        }
+        if overlay is MKCircle {
+            let renderer = MKCircleRenderer(overlay:overlay)
+            renderer.strokeColor = .red
+            renderer.fillColor = .red
+            renderer.alpha = 0.5
+            return renderer
+        }
+        return MKOverlayRenderer()
     }
+    
 }
+
+
     extension float4x4 {
         var translation: SIMD3<Float> {
             let translation = self.columns.3
@@ -225,6 +284,7 @@ extension ARViewController: MKMapViewDelegate{
 
 let locationManager: CLLocationManager = {
   $0.requestWhenInUseAuthorization()
+  $0.startUpdatingLocation()
   $0.startUpdatingHeading()
   return $0
 }(CLLocationManager())
