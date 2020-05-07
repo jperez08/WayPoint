@@ -1,0 +1,6 @@
+framework module Pods_WayPoint3_0_WayPoint3_0UITests {
+  umbrella header "Pods-WayPoint3.0-WayPoint3.0UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
