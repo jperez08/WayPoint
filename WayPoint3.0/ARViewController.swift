@@ -13,16 +13,20 @@ import UIKit
 import SceneKit
 import ARKit
 import AVFoundation
+import ARCL
 
+@available(iOS 11.0, *)
 //  ,ARSCNViewDelegate
-class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDelegate  {
-
+class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDelegate {
+    
+    
     @IBOutlet weak var directionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var sceneView: ARSCNView!
+    //@IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var removePlanes: UIButton!
+  
     
-    var steps = [MKRoute.Step]() // empty array ADDED
+    var steps = [MKRoute.Step]() // empty array
     var currentCoordinate: CLLocationCoordinate2D!
     
     let speechSynthesizer = AVSpeechSynthesizer()
@@ -34,6 +38,22 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
     var dest: POIs?
     var currentLocation = CLLocation()
     let locationManager = CLLocationManager()
+    
+    
+    var showMap = true
+    
+    @IBOutlet var contentView: UIView!
+    //var updateUserLocationTimer: Timer?
+    //var updateInfoLabelTimer: Timer?
+    var userAnnotation: MKPointAnnotation?
+    var locationEstimateAnnotation: MKPointAnnotation?
+    var routes: [MKRoute]?
+    var centerMapOnUserLocation: Bool = true
+    /// Whether to display some debugging data
+    /// This currently displays the coordinate of the best location estimate
+    /// The initial value is respected
+    let displayDebugging = false
+    let sceneLocationView = SceneLocationView()
     
     
     func checkLocationAuthorizationStatus() {
@@ -72,10 +92,14 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
               speechSynthesizer.speak(speechUtterance)
               stepCounter = 0
               locationManager.monitoredRegions.forEach({ self.locationManager.stopMonitoring(for: $0) })
-              
+              let viewController = storyboard?.instantiateViewController(withIdentifier : "mainView")as! ARViewController
+              let secondsToDelay = 1.0
+              DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+                 self.present(viewController, animated: true)
+                 // Put any code you want to be delayed here
+              }
           }
       }
-    
     
     
     func createDirectionRequest() -> MKDirections.Request {
@@ -86,7 +110,8 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
            let request = MKDirections.Request()
            request.source = MKMapItem(placemark: startinglocation)
            request.destination = MKMapItem(placemark: destinationlocation)
-           request.transportType = .automobile
+           request.transportType = .walking
+            //.automobile
            request.requestsAlternateRoutes = false
            return request
        }
@@ -114,12 +139,12 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
         print("got directions")
             guard let response = response else {return}
             guard let primaryRoute = response.routes.first else {return}
+            self.routes = response.routes
             self.steps = primaryRoute.steps //saved steps to access outside ADDED!!!
             self.mapView.addOverlay(primaryRoute.polyline)
             self.locationManager.monitoredRegions.forEach({self.locationManager.stopMonitoring(for: $0)})
         print("got route")
             for i in 0 ..< primaryRoute.steps.count{
-
                 let step = primaryRoute.steps[i]
                 print(step.instructions)
                 print(step.distance)
@@ -135,9 +160,10 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
             self.stepCounter += 1
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        sceneLocationView.run()
         //show the user's current location
         //mapView.userTrackingMode = .followWithHeading
         
@@ -146,9 +172,60 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
         mapView.showsCompass = true
         checkLocationAuthorizationStatus()
         
+//================Added=============
+         // swiftlint:disable:next discarded_notification_center_observer
+                NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification,
+                                                       object: nil,
+                                                       queue: nil) { [weak self] _ in
+                                                        self?.pauseAnimation()
+                }
+                // swiftlint:disable:next discarded_notification_center_observer
+                NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification,
+                                                       object: nil,
+                                                       queue: nil) { [weak self] _ in
+                                                        self?.restartAnimation()
+                }
+
+                
+
+                // Set to true to display an arrow which points north.
+                // Checkout the comments in the property description and on the readme on this.
+        //        sceneLocationView.orientToTrueNorth = false
+        //        sceneLocationView.locationEstimateMethod = .coreLocationDataOnly
+
+                //sceneLocationView.showAxesNode = true
+                sceneLocationView.showFeaturePoints = displayDebugging
+                
+        //        sceneLocationView.delegate = self // Causes an assertionFailure - use the `arViewDelegate` instead:
+                sceneLocationView.arViewDelegate = self
+                
+                // Now add the route or location annotations as appropriate
+                addSceneModels()
+                
+                contentView.addSubview(sceneLocationView)
+                contentView.addSubview(self.mapView)
+                sceneLocationView.frame = contentView.bounds
+    
+        
+    }
+//=======================ADDED----
+    
+
+    func pauseAnimation() {
+        print("pause")
+        sceneLocationView.pause()
     }
 
+    func restartAnimation() {
+        print("run")
+        sceneLocationView.run()
+    }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        sceneLocationView.frame = contentView.bounds
+    }
+//===========================================/
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -156,33 +233,35 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         // Run the view's session
+        
+        /* commented for testing purposes
         sceneView.session.run(configuration)
         
         sceneView.delegate = self
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        */
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        pauseAnimation() // added this function
         
         // Pause the view's session
-        sceneView.session.pause()
+        //sceneView.session.pause()
     }
     
   
     @IBAction func resetClicked(_ sender: Any) {
         
         //planeAnchor.removeAll() //need to figure out
-        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
-        node.removeFromParentNode()
+        //originally sceneView
+        //--contentView.scene.rootNode.enumerateChildNodes { (node, stop) in
+        //--node.removeFromParentNode()
         }
         //----comment out setUpSceneView() //don't think this is necessary
     }
     //--Added
-    func configureLighting() {
-        sceneView.autoenablesDefaultLighting = true
-        sceneView.automaticallyUpdatesLighting = true
-    }
+   
 
     
     func session(_ session: ARSession, didFailWithError error: Error) {
@@ -244,9 +323,7 @@ class ARViewController: UIViewController ,ARSCNViewDelegate, CLLocationManagerDe
          let z = CGFloat(planeAnchor.center.z)
          planeNode.position = SCNVector3(x, y, z)
         }
-    
-      
-}
+
 
 //modify
 extension ARViewController: MKMapViewDelegate{
@@ -281,6 +358,47 @@ extension ARViewController: MKMapViewDelegate{
             return UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 0.50)
         }
 }
+
+//--------ADDED--------
+extension ARViewController {
+
+    /// Adds the appropriate ARKit models to the scene.
+    func addSceneModels() {
+        // do not add the models to the scene until we have a current location
+        guard sceneLocationView.sceneLocationManager.currentLocation != nil else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                self?.addSceneModels()
+            }
+            return
+        }
+
+        let box = SCNBox(width: 1, height: 0.2, length: 5, chamferRadius: 0.25)
+        box.firstMaterial?.diffuse.contents = UIColor.gray.withAlphaComponent(0.5)
+
+        //Show route if it exists
+        if let routes = routes {
+            print("There's a route!")
+            sceneLocationView.addRoutes(routes: routes) { distance -> SCNBox in
+                let box = SCNBox(width: 1.75, height: 0.5, length: distance, chamferRadius: 0.25)
+
+                // Option 2: Something more typical
+                box.firstMaterial?.diffuse.contents = UIColor.red.withAlphaComponent(0.7)
+                return box
+            }
+        } else {
+            print("Theres nooooo route!!!!")
+          
+            }
+
+        //helps improve the appearance of 3d line
+        sceneLocationView.autoenablesDefaultLighting = true
+    }
+
+}
+
+
+//-------------END------------//
+
 
 let locationManager: CLLocationManager = {
   $0.requestWhenInUseAuthorization()

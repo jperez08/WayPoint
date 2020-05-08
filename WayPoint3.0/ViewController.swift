@@ -111,17 +111,41 @@ class ViewController: UIViewController {
         //annotation for testing purposes
         let Corner = POIs(title: "Corner House",
                            locationName: "Sj",
-                           coordinate: CLLocationCoordinate2D(latitude: 37.2959292, longitude: -121.8381747))
+                           coordinate: CLLocationCoordinate2D(latitude: 37.2975493, longitude: -121.8382150))
         mapView.addAnnotation(Corner)
        
     }
 }
 
 
+
+
+
+
+func directionsRequest(to mapLocation: MKMapItem) -> MKDirections.Request {
+
+    let request = MKDirections.Request()
+    request.source = MKMapItem.forCurrentLocation()
+    request.destination = mapLocation
+    request.requestsAlternateRoutes = false
+
+    let directions = MKDirections(request: request)
+
+    directions.calculate(completionHandler: { response, error in
+     
+        if let error = error {
+            return print("Error getting directions: \(error.localizedDescription)")
+        }
+       
+    })
+    return request
+    
+}
+
 extension ViewController: MKMapViewDelegate {
+    
   
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    
     
     guard let annotation = annotation as? POIs else { return nil }
     
@@ -152,7 +176,28 @@ extension ViewController: MKMapViewDelegate {
         let viewController = storyboard.instantiateViewController(withIdentifier : "ARV")as! ARViewController
         
         
+        
         viewController.dest = view.annotation as? POIs
+        
+        var dest2: POIs?
+        dest2 = view.annotation as? POIs
+        let destinationCoordinate = dest2!.coordinate
+        let destinationlocation = MKPlacemark(coordinate: destinationCoordinate)
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem.forCurrentLocation()
+        request.destination = MKMapItem(placemark: destinationlocation)
+        request.transportType = .walking
+        request.requestsAlternateRoutes = false
+        
+        let directions = MKDirections(request:request)
+        directions.calculate{ (response, error) in
+        print("got directions")
+            guard let response = response else {return}
+            //guard let primaryRoute = response.routes.first else {return}
+            viewController.routes = response.routes
+        }
+        
         
         self.present(viewController, animated: true)
         
@@ -162,3 +207,5 @@ extension ViewController: MKMapViewDelegate {
     
     
 }
+
+

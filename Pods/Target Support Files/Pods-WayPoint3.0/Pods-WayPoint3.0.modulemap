@@ -1,0 +1,6 @@
+framework module Pods_WayPoint3_0 {
+  umbrella header "Pods-WayPoint3.0-umbrella.h"
+
+  export *
+  module * { export * }
+}
