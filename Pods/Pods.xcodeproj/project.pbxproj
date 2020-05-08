@@ -1,0 +1,1056 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04208E574B8A3FBEB914F997509C5299 /* BaseTypes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF88491F6AE1EB1851A51568AE4983B /* BaseTypes+Extensions.swift */; };
+		066FD08EF5D9078C9E733D2DFF581651 /* LocationAnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB093A5D626B6CF6AAA561A2EC62B4F9 /* LocationAnnotationNode.swift */; };
+		06AE10556CCDAB1C8BAB1253F0137A03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA272986C62108D971D1681FF887203E /* CoreLocation.framework */; };
+		07A777C6ADE7589D930D21A804912577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */; };
+		0D610959943DC13B87A77C9B51CDA21A /* Pods-WayPoint3.0Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C3B7756D79FB8A147C58A6960D29D /* Pods-WayPoint3.0Tests-dummy.m */; };
+		14129E30C55A23A4798CB5645D2F2530 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1286BD9CC3F1431DD7E6D631FBB111F5 /* MapKit.framework */; };
+		175518AB4723AA996812B2F20760A158 /* SceneLocationEstimate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7836D4A36132CAFAB7527224FB481 /* SceneLocationEstimate+Extensions.swift */; };
+		1CCB7C9B423B65F33BA46AE6959D7A20 /* Pods-WayPoint3.0-WayPoint3.0UITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A56499C3623E47925FE6DC3438782B8 /* Pods-WayPoint3.0-WayPoint3.0UITests-dummy.m */; };
+		1E1379D2CF8C3FF935F8D88B2E22C061 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */; };
+		33677423A883A0E5400A0EFFAB97F0A4 /* Pods-WayPoint3.0-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE49B54E54DBC50129FA4F1A0F5E0A69 /* Pods-WayPoint3.0-dummy.m */; };
+		41BE9347A5E9DD88A94C29A25193FAE6 /* SceneLocationView+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA8C601985ADABD7526ADA624835BB /* SceneLocationView+ARSCNViewDelegate.swift */; };
+		41F024CE6F5E5CC67308ADD03CB4EEB9 /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1A5FDCBC819BDEAE312E67214EB1B /* SCNNode+Extensions.swift */; };
+		462B4A6FEC5638E4FF676C20D4D8206C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9198131727667F5A36AEE40099328680 /* UIKit.framework */; };
+		49A3EE3048F4C134E58733507823B611 /* SceneLocationViewEstimateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C02F708E43B7784677782AB27ADE /* SceneLocationViewEstimateDelegate.swift */; };
+		4AAE0F3B409B86906FF07BB9B7AD995D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB603992099249FA0514833E3298694 /* LocationManager.swift */; };
+		4F320F5D6C312452A344A64421EDE07E /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41196ED804095C0D3FA9B693E4CD259C /* CLLocation+Extensions.swift */; };
+		5124D2B85D47A6F147E1CD1085B9467E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */; };
+		5B465B4C6DD51A5B4ED603318539E4D8 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E91DF3DD80E18E4420D8BA5480A48B /* SceneKit.framework */; };
+		61056C6EFFF75EB7F6B6F09C9497BD60 /* ARCL-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C5F167285CFF8146E960AF7ADB8564 /* ARCL-dummy.m */; };
+		6841F73E84D853E5D8D167C735908F74 /* SceneLocationEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0772A1F6C0DB8ABA7FE495548359313 /* SceneLocationEstimate.swift */; };
+		752831D33A377197EB5026D4D597B60B /* ScalingScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029BEF19D8C643EF231F1D069030CC9C /* ScalingScheme.swift */; };
+		7BA73522DF205C8C8123142B55A66EE2 /* FloatingPoint+Radians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D50A43CC3D72AC450E1481BEFFA892 /* FloatingPoint+Radians.swift */; };
+		7BD57C52C8BE3A84AA0B2EBFAE0D9704 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7DAAC14B96D7E3DE0598BB93C1600 /* CGPoint+Extensions.swift */; };
+		7C781B781A43BF12E389B0E56F8B02B0 /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5BDAB147E6E80B174702A54D5110D4 /* SCNVector3+Extensions.swift */; };
+		7CA9BD8B823718DAC8BE8F759E4EC20D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */; };
+		87F273930381D64A3976A1333383C096 /* ARCL-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A7B4068465DD2ED01EB2741CA215C93 /* ARCL-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C9E09DAB956CB33371537149790A24B /* Pods-WayPoint3.0-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 75106E042C37CFAF4FC6128A6A03F60E /* Pods-WayPoint3.0-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E8F66C857746502C748EF43410DE9C0 /* Pods-WayPoint3.0-WayPoint3.0UITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E64F8B110351A70C9318912E33C9D9 /* Pods-WayPoint3.0-WayPoint3.0UITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B17AF6BEC2C03C7D8817BDC77D0ABCC8 /* SceneLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42056F9073BDEB595EAB58D109D10B2 /* SceneLocationView.swift */; };
+		BF52365B4F8F2C456C5F8251FE0E7577 /* AttributedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DE850B4BD62B1401D56065C270D38 /* AttributedType.swift */; };
+		C90E2A2B47EE101E2B491A592DC42137 /* ARKit_CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779760DBF7D912E22FAE24625A56AC /* ARKit_CoreLocation.swift */; };
+		CCE20801F233D2A46FAF52EB54EA62D0 /* SceneLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50444A64561A85613B79C97B9B114FB /* SceneLocationManager.swift */; };
+		D6061A685F390C74BBE37AD8280D149D /* Pods-WayPoint3.0Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46ED9F5910A28C0F012C8A201E2C41BD /* Pods-WayPoint3.0Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D871152B03BA39E280878D06BB3DBFBA /* PolylineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8AE249327E3474232E4A3D3684452 /* PolylineNode.swift */; };
+		F812FD15FA459C7339E47E72A9691C6F /* LocationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868DA569D253EBF7EC75515DB232C47 /* LocationNode.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D90D751ABB731B066478F0886B25EC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 398D978AEA89D5CB0F597536D5164BB5;
+			remoteInfo = "Pods-WayPoint3.0";
+		};
+		D63C2CA8B577EA82B318A0E7D6B21094 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB32E97F940371D391F6B8FB4F24AC15;
+			remoteInfo = ARCL;
+		};
+		EAE0981C6DA95043A186FC52EAF2B49E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB32E97F940371D391F6B8FB4F24AC15;
+			remoteInfo = ARCL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01C2867B404F691B15B8084DB806468B /* ARCL-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARCL-prefix.pch"; sourceTree = "<group>"; };
+		029BEF19D8C643EF231F1D069030CC9C /* ScalingScheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScalingScheme.swift; path = "Sources/ARKit-CoreLocation/Nodes/ScalingScheme.swift"; sourceTree = "<group>"; };
+		0EF4C23BDBA35F2516B68AF343884D9A /* Pods-WayPoint3.0-WayPoint3.0UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WayPoint3.0-WayPoint3.0UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		10779760DBF7D912E22FAE24625A56AC /* ARKit_CoreLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ARKit_CoreLocation.swift; path = "Sources/ARKit-CoreLocation/ARKit_CoreLocation.swift"; sourceTree = "<group>"; };
+		115BCE45C9256FB90DEAC80F36441EEE /* Pods_WayPoint3_0Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WayPoint3_0Tests.framework; path = "Pods-WayPoint3.0Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1286BD9CC3F1431DD7E6D631FBB111F5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		17FC4E3263B95F51D9F1EA2C74E97D4F /* Pods-WayPoint3.0-WayPoint3.0UITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WayPoint3.0-WayPoint3.0UITests-Info.plist"; sourceTree = "<group>"; };
+		1D52D1CC40FC55A72D3162430592F799 /* ARCL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ARCL.release.xcconfig; sourceTree = "<group>"; };
+		22FC6DB2F3B3106FF5442B0A05212BB5 /* Pods-WayPoint3.0-WayPoint3.0UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WayPoint3.0-WayPoint3.0UITests.release.xcconfig"; sourceTree = "<group>"; };
+		2A7B4068465DD2ED01EB2741CA215C93 /* ARCL-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARCL-umbrella.h"; sourceTree = "<group>"; };
+		2C89C0AF8AF7E931F6A977A49AA70784 /* Pods-WayPoint3.0Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WayPoint3.0Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2EB1C1501E18CB608A07BD059CD952A4 /* Pods-WayPoint3.0-WayPoint3.0UITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WayPoint3.0-WayPoint3.0UITests-frameworks.sh"; sourceTree = "<group>"; };
+		3351E47BB5F74D08DFE2B1C73E3C6FE3 /* Pods-WayPoint3.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WayPoint3.0.debug.xcconfig"; sourceTree = "<group>"; };
+		338CFC6DFF16B76CB55D4FE1BE64693F /* Pods-WayPoint3.0-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WayPoint3.0-acknowledgements.plist"; sourceTree = "<group>"; };
+		35D50A43CC3D72AC450E1481BEFFA892 /* FloatingPoint+Radians.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FloatingPoint+Radians.swift"; path = "Sources/ARKit-CoreLocation/Extensions/FloatingPoint+Radians.swift"; sourceTree = "<group>"; };
+		3A56499C3623E47925FE6DC3438782B8 /* Pods-WayPoint3.0-WayPoint3.0UITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WayPoint3.0-WayPoint3.0UITests-dummy.m"; sourceTree = "<group>"; };
+		3C5BDAB147E6E80B174702A54D5110D4 /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SCNVector3+Extensions.swift"; path = "Sources/ARKit-CoreLocation/Extensions/SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
+		41196ED804095C0D3FA9B693E4CD259C /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CLLocation+Extensions.swift"; path = "Sources/ARKit-CoreLocation/Extensions/CLLocation+Extensions.swift"; sourceTree = "<group>"; };
+		43CA41BBA4E17D11CAEE2489D0A90E4F /* Pods-WayPoint3.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WayPoint3.0-Info.plist"; sourceTree = "<group>"; };
+		46ED9F5910A28C0F012C8A201E2C41BD /* Pods-WayPoint3.0Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WayPoint3.0Tests-umbrella.h"; sourceTree = "<group>"; };
+		4C1C3B7756D79FB8A147C58A6960D29D /* Pods-WayPoint3.0Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WayPoint3.0Tests-dummy.m"; sourceTree = "<group>"; };
+		53C5F167285CFF8146E960AF7ADB8564 /* ARCL-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ARCL-dummy.m"; sourceTree = "<group>"; };
+		5763E96DD3F6A6039286627D58CDA64C /* ARCL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ARCL.debug.xcconfig; sourceTree = "<group>"; };
+		5FECB3AA33B81E6245A24C94335AB1D1 /* Pods-WayPoint3.0Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WayPoint3.0Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		63E64F8B110351A70C9318912E33C9D9 /* Pods-WayPoint3.0-WayPoint3.0UITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WayPoint3.0-WayPoint3.0UITests-umbrella.h"; sourceTree = "<group>"; };
+		6BF88491F6AE1EB1851A51568AE4983B /* BaseTypes+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BaseTypes+Extensions.swift"; path = "Sources/ARKit-CoreLocation/Extensions/BaseTypes+Extensions.swift"; sourceTree = "<group>"; };
+		6CC7836D4A36132CAFAB7527224FB481 /* SceneLocationEstimate+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SceneLocationEstimate+Extensions.swift"; path = "Sources/ARKit-CoreLocation/Location Manager/SceneLocationEstimate+Extensions.swift"; sourceTree = "<group>"; };
+		7264B1670A07B14528A7135E614E2EFB /* Pods-WayPoint3.0-WayPoint3.0UITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WayPoint3.0-WayPoint3.0UITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		75106E042C37CFAF4FC6128A6A03F60E /* Pods-WayPoint3.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WayPoint3.0-umbrella.h"; sourceTree = "<group>"; };
+		78D8AE249327E3474232E4A3D3684452 /* PolylineNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PolylineNode.swift; path = "Sources/ARKit-CoreLocation/Nodes/PolylineNode.swift"; sourceTree = "<group>"; };
+		80BF347BEC52EB5EF6D6C237EFA544AC /* Pods-WayPoint3.0Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WayPoint3.0Tests.release.xcconfig"; sourceTree = "<group>"; };
+		833D4866D06946B86DEDC0E2B4FF6C7B /* Pods-WayPoint3.0Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WayPoint3.0Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8CABBEA97DF24D81F1AA8BC7787536A7 /* Pods_WayPoint3_0_WayPoint3_0UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WayPoint3_0_WayPoint3_0UITests.framework; path = "Pods-WayPoint3.0-WayPoint3.0UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90E91DF3DD80E18E4420D8BA5480A48B /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
+		9198131727667F5A36AEE40099328680 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		9816C02F708E43B7784677782AB27ADE /* SceneLocationViewEstimateDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneLocationViewEstimateDelegate.swift; path = "Sources/ARKit-CoreLocation/SceneLocationViewEstimateDelegate.swift"; sourceTree = "<group>"; };
+		985DE850B4BD62B1401D56065C270D38 /* AttributedType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributedType.swift; path = "Sources/ARKit-CoreLocation/Util/AttributedType.swift"; sourceTree = "<group>"; };
+		9A4639CF5FBABEEB2FBBF17E4EB1395F /* ARCL-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ARCL-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0C9E8E2C3097351DA7326C97D38EB4F /* Pods-WayPoint3.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WayPoint3.0.release.xcconfig"; sourceTree = "<group>"; };
+		A77438E7FDC1F818792A1BA643D8EF7C /* ARCL.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ARCL.modulemap; sourceTree = "<group>"; };
+		ABA1A5FDCBC819BDEAE312E67214EB1B /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SCNNode+Extensions.swift"; path = "Sources/ARKit-CoreLocation/Extensions/SCNNode+Extensions.swift"; sourceTree = "<group>"; };
+		AC6E3ECE0CBE1F26899E96DBDFA11C1D /* Pods-WayPoint3.0-WayPoint3.0UITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WayPoint3.0-WayPoint3.0UITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B42056F9073BDEB595EAB58D109D10B2 /* SceneLocationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneLocationView.swift; path = "Sources/ARKit-CoreLocation/SceneLocationView.swift"; sourceTree = "<group>"; };
+		B5B7DAAC14B96D7E3DE0598BB93C1600 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extensions.swift"; path = "Sources/ARKit-CoreLocation/Extensions/CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		B653DD5E78F8C1EC77FFAF2CF4F7B2AC /* Pods_WayPoint3_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WayPoint3_0.framework; path = "Pods-WayPoint3.0.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B868DA569D253EBF7EC75515DB232C47 /* LocationNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationNode.swift; path = "Sources/ARKit-CoreLocation/Nodes/LocationNode.swift"; sourceTree = "<group>"; };
+		B91261DA2571FA90F1E94BC29C1AE488 /* Pods-WayPoint3.0Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WayPoint3.0Tests.modulemap"; sourceTree = "<group>"; };
+		BE6D58B305CE48886FB5D465D5E918B4 /* Pods-WayPoint3.0Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WayPoint3.0Tests-Info.plist"; sourceTree = "<group>"; };
+		C0772A1F6C0DB8ABA7FE495548359313 /* SceneLocationEstimate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneLocationEstimate.swift; path = "Sources/ARKit-CoreLocation/Location Manager/SceneLocationEstimate.swift"; sourceTree = "<group>"; };
+		C1DA8C601985ADABD7526ADA624835BB /* SceneLocationView+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SceneLocationView+ARSCNViewDelegate.swift"; path = "Sources/ARKit-CoreLocation/SceneLocationView+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		C24DB595F0FB8C861BB67EFAEE2ABE59 /* Pods-WayPoint3.0-WayPoint3.0UITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WayPoint3.0-WayPoint3.0UITests.modulemap"; sourceTree = "<group>"; };
+		C7ADEE321186A59406F16630332B9832 /* ARCL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ARCL.framework; path = ARCL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D9678B69354C690FF9047008BD6C690C /* Pods-WayPoint3.0-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WayPoint3.0-frameworks.sh"; sourceTree = "<group>"; };
+		DA272986C62108D971D1681FF887203E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		DF87EBCFAFB160A07F0A062C4B051C7C /* Pods-WayPoint3.0-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WayPoint3.0-acknowledgements.markdown"; sourceTree = "<group>"; };
+		ECB603992099249FA0514833E3298694 /* LocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = "Sources/ARKit-CoreLocation/Location Manager/LocationManager.swift"; sourceTree = "<group>"; };
+		F50444A64561A85613B79C97B9B114FB /* SceneLocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneLocationManager.swift; path = "Sources/ARKit-CoreLocation/Location Manager/SceneLocationManager.swift"; sourceTree = "<group>"; };
+		FB093A5D626B6CF6AAA561A2EC62B4F9 /* LocationAnnotationNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationAnnotationNode.swift; path = "Sources/ARKit-CoreLocation/Nodes/LocationAnnotationNode.swift"; sourceTree = "<group>"; };
+		FE49B54E54DBC50129FA4F1A0F5E0A69 /* Pods-WayPoint3.0-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WayPoint3.0-dummy.m"; sourceTree = "<group>"; };
+		FF5234A6E920657DFF316239EAC99713 /* Pods-WayPoint3.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WayPoint3.0.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		142AE6EB8407191844074817A18C2723 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06AE10556CCDAB1C8BAB1253F0137A03 /* CoreLocation.framework in Frameworks */,
+				1E1379D2CF8C3FF935F8D88B2E22C061 /* Foundation.framework in Frameworks */,
+				14129E30C55A23A4798CB5645D2F2530 /* MapKit.framework in Frameworks */,
+				5B465B4C6DD51A5B4ED603318539E4D8 /* SceneKit.framework in Frameworks */,
+				462B4A6FEC5638E4FF676C20D4D8206C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A1F730B1F6CADAE5B82FAF9418CA337 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5124D2B85D47A6F147E1CD1085B9467E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30C49B589D2A9AC20A01D31D7676FFD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A777C6ADE7589D930D21A804912577 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D41E17506F62A805684CF1525884846D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA9BD8B823718DAC8BE8F759E4EC20D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1DBF970C0823257FD95FF1A3700571DA /* Pods-WayPoint3.0Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B91261DA2571FA90F1E94BC29C1AE488 /* Pods-WayPoint3.0Tests.modulemap */,
+				833D4866D06946B86DEDC0E2B4FF6C7B /* Pods-WayPoint3.0Tests-acknowledgements.markdown */,
+				5FECB3AA33B81E6245A24C94335AB1D1 /* Pods-WayPoint3.0Tests-acknowledgements.plist */,
+				4C1C3B7756D79FB8A147C58A6960D29D /* Pods-WayPoint3.0Tests-dummy.m */,
+				BE6D58B305CE48886FB5D465D5E918B4 /* Pods-WayPoint3.0Tests-Info.plist */,
+				46ED9F5910A28C0F012C8A201E2C41BD /* Pods-WayPoint3.0Tests-umbrella.h */,
+				2C89C0AF8AF7E931F6A977A49AA70784 /* Pods-WayPoint3.0Tests.debug.xcconfig */,
+				80BF347BEC52EB5EF6D6C237EFA544AC /* Pods-WayPoint3.0Tests.release.xcconfig */,
+			);
+			name = "Pods-WayPoint3.0Tests";
+			path = "Target Support Files/Pods-WayPoint3.0Tests";
+			sourceTree = "<group>";
+		};
+		25A1FC8AA4DD6404212D9BD287A6810C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7ADEE321186A59406F16630332B9832 /* ARCL.framework */,
+				B653DD5E78F8C1EC77FFAF2CF4F7B2AC /* Pods_WayPoint3_0.framework */,
+				8CABBEA97DF24D81F1AA8BC7787536A7 /* Pods_WayPoint3_0_WayPoint3_0UITests.framework */,
+				115BCE45C9256FB90DEAC80F36441EEE /* Pods_WayPoint3_0Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		301556F00EA9CC1193024EEF65A61421 /* ARCL */ = {
+			isa = PBXGroup;
+			children = (
+				10779760DBF7D912E22FAE24625A56AC /* ARKit_CoreLocation.swift */,
+				985DE850B4BD62B1401D56065C270D38 /* AttributedType.swift */,
+				6BF88491F6AE1EB1851A51568AE4983B /* BaseTypes+Extensions.swift */,
+				B5B7DAAC14B96D7E3DE0598BB93C1600 /* CGPoint+Extensions.swift */,
+				41196ED804095C0D3FA9B693E4CD259C /* CLLocation+Extensions.swift */,
+				35D50A43CC3D72AC450E1481BEFFA892 /* FloatingPoint+Radians.swift */,
+				FB093A5D626B6CF6AAA561A2EC62B4F9 /* LocationAnnotationNode.swift */,
+				ECB603992099249FA0514833E3298694 /* LocationManager.swift */,
+				B868DA569D253EBF7EC75515DB232C47 /* LocationNode.swift */,
+				78D8AE249327E3474232E4A3D3684452 /* PolylineNode.swift */,
+				029BEF19D8C643EF231F1D069030CC9C /* ScalingScheme.swift */,
+				C0772A1F6C0DB8ABA7FE495548359313 /* SceneLocationEstimate.swift */,
+				6CC7836D4A36132CAFAB7527224FB481 /* SceneLocationEstimate+Extensions.swift */,
+				F50444A64561A85613B79C97B9B114FB /* SceneLocationManager.swift */,
+				B42056F9073BDEB595EAB58D109D10B2 /* SceneLocationView.swift */,
+				C1DA8C601985ADABD7526ADA624835BB /* SceneLocationView+ARSCNViewDelegate.swift */,
+				9816C02F708E43B7784677782AB27ADE /* SceneLocationViewEstimateDelegate.swift */,
+				ABA1A5FDCBC819BDEAE312E67214EB1B /* SCNNode+Extensions.swift */,
+				3C5BDAB147E6E80B174702A54D5110D4 /* SCNVector3+Extensions.swift */,
+				E7EA495952CEDD298C3C6152BFDF3E85 /* Support Files */,
+			);
+			name = ARCL;
+			path = ARCL;
+			sourceTree = "<group>";
+		};
+		5A3F30C58191A64D12509CD5582B0C5E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DA272986C62108D971D1681FF887203E /* CoreLocation.framework */,
+				CE1C87DD65575F3BFF2A2EB472E5344D /* Foundation.framework */,
+				1286BD9CC3F1431DD7E6D631FBB111F5 /* MapKit.framework */,
+				90E91DF3DD80E18E4420D8BA5480A48B /* SceneKit.framework */,
+				9198131727667F5A36AEE40099328680 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		68D9DA8CC28A173A529CEC0FE314A0AE /* Pods-WayPoint3.0-WayPoint3.0UITests */ = {
+			isa = PBXGroup;
+			children = (
+				C24DB595F0FB8C861BB67EFAEE2ABE59 /* Pods-WayPoint3.0-WayPoint3.0UITests.modulemap */,
+				AC6E3ECE0CBE1F26899E96DBDFA11C1D /* Pods-WayPoint3.0-WayPoint3.0UITests-acknowledgements.markdown */,
+				7264B1670A07B14528A7135E614E2EFB /* Pods-WayPoint3.0-WayPoint3.0UITests-acknowledgements.plist */,
+				3A56499C3623E47925FE6DC3438782B8 /* Pods-WayPoint3.0-WayPoint3.0UITests-dummy.m */,
+				2EB1C1501E18CB608A07BD059CD952A4 /* Pods-WayPoint3.0-WayPoint3.0UITests-frameworks.sh */,
+				17FC4E3263B95F51D9F1EA2C74E97D4F /* Pods-WayPoint3.0-WayPoint3.0UITests-Info.plist */,
+				63E64F8B110351A70C9318912E33C9D9 /* Pods-WayPoint3.0-WayPoint3.0UITests-umbrella.h */,
+				0EF4C23BDBA35F2516B68AF343884D9A /* Pods-WayPoint3.0-WayPoint3.0UITests.debug.xcconfig */,
+				22FC6DB2F3B3106FF5442B0A05212BB5 /* Pods-WayPoint3.0-WayPoint3.0UITests.release.xcconfig */,
+			);
+			name = "Pods-WayPoint3.0-WayPoint3.0UITests";
+			path = "Target Support Files/Pods-WayPoint3.0-WayPoint3.0UITests";
+			sourceTree = "<group>";
+		};
+		69D9CF72EE17F968053A9892DB787FDB /* Pods-WayPoint3.0 */ = {
+			isa = PBXGroup;
+			children = (
+				FF5234A6E920657DFF316239EAC99713 /* Pods-WayPoint3.0.modulemap */,
+				DF87EBCFAFB160A07F0A062C4B051C7C /* Pods-WayPoint3.0-acknowledgements.markdown */,
+				338CFC6DFF16B76CB55D4FE1BE64693F /* Pods-WayPoint3.0-acknowledgements.plist */,
+				FE49B54E54DBC50129FA4F1A0F5E0A69 /* Pods-WayPoint3.0-dummy.m */,
+				D9678B69354C690FF9047008BD6C690C /* Pods-WayPoint3.0-frameworks.sh */,
+				43CA41BBA4E17D11CAEE2489D0A90E4F /* Pods-WayPoint3.0-Info.plist */,
+				75106E042C37CFAF4FC6128A6A03F60E /* Pods-WayPoint3.0-umbrella.h */,
+				3351E47BB5F74D08DFE2B1C73E3C6FE3 /* Pods-WayPoint3.0.debug.xcconfig */,
+				A0C9E8E2C3097351DA7326C97D38EB4F /* Pods-WayPoint3.0.release.xcconfig */,
+			);
+			name = "Pods-WayPoint3.0";
+			path = "Target Support Files/Pods-WayPoint3.0";
+			sourceTree = "<group>";
+		};
+		6C0547E504667F7B5F0C93DFD3E92595 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				69D9CF72EE17F968053A9892DB787FDB /* Pods-WayPoint3.0 */,
+				1DBF970C0823257FD95FF1A3700571DA /* Pods-WayPoint3.0Tests */,
+				68D9DA8CC28A173A529CEC0FE314A0AE /* Pods-WayPoint3.0-WayPoint3.0UITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B94D7768568A9992200DB461E8CF687F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A3F30C58191A64D12509CD5582B0C5E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C472CF32759D0FA0DB0C2492B6E36AFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				301556F00EA9CC1193024EEF65A61421 /* ARCL */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				B94D7768568A9992200DB461E8CF687F /* Frameworks */,
+				C472CF32759D0FA0DB0C2492B6E36AFB /* Pods */,
+				25A1FC8AA4DD6404212D9BD287A6810C /* Products */,
+				6C0547E504667F7B5F0C93DFD3E92595 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E7EA495952CEDD298C3C6152BFDF3E85 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A77438E7FDC1F818792A1BA643D8EF7C /* ARCL.modulemap */,
+				53C5F167285CFF8146E960AF7ADB8564 /* ARCL-dummy.m */,
+				9A4639CF5FBABEEB2FBBF17E4EB1395F /* ARCL-Info.plist */,
+				01C2867B404F691B15B8084DB806468B /* ARCL-prefix.pch */,
+				2A7B4068465DD2ED01EB2741CA215C93 /* ARCL-umbrella.h */,
+				5763E96DD3F6A6039286627D58CDA64C /* ARCL.debug.xcconfig */,
+				1D52D1CC40FC55A72D3162430592F799 /* ARCL.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ARCL";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2BF47C34960A0A6005044F4F10D4F607 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E8F66C857746502C748EF43410DE9C0 /* Pods-WayPoint3.0-WayPoint3.0UITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C3EDA5BD3430CF0676876256DCEAFBA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C9E09DAB956CB33371537149790A24B /* Pods-WayPoint3.0-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8D2B0584EE7584DFF9AFCA35589681A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6061A685F390C74BBE37AD8280D149D /* Pods-WayPoint3.0Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCA04B232AF0487CA3F13412E719C143 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87F273930381D64A3976A1333383C096 /* ARCL-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0053E5DDD37DDD627FF7A533B8526CF5 /* Pods-WayPoint3.0-WayPoint3.0UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B0D2A5987D1353139BDBDD4165FFCE2 /* Build configuration list for PBXNativeTarget "Pods-WayPoint3.0-WayPoint3.0UITests" */;
+			buildPhases = (
+				2BF47C34960A0A6005044F4F10D4F607 /* Headers */,
+				EC113C9CA3EA36836A4001E1C17E15A4 /* Sources */,
+				D41E17506F62A805684CF1525884846D /* Frameworks */,
+				C72DD919B8E84BCB7F2098BD46DD55C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4971FD15249868A32849DFA14C36ACE5 /* PBXTargetDependency */,
+			);
+			name = "Pods-WayPoint3.0-WayPoint3.0UITests";
+			productName = "Pods-WayPoint3.0-WayPoint3.0UITests";
+			productReference = 8CABBEA97DF24D81F1AA8BC7787536A7 /* Pods_WayPoint3_0_WayPoint3_0UITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		22AF90A92C10CAA16B7172A272B7B523 /* Pods-WayPoint3.0Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D310A836FFF88E39B0427C7560270251 /* Build configuration list for PBXNativeTarget "Pods-WayPoint3.0Tests" */;
+			buildPhases = (
+				A8D2B0584EE7584DFF9AFCA35589681A /* Headers */,
+				5608F6D0846A76ECC076EC4071122322 /* Sources */,
+				30C49B589D2A9AC20A01D31D7676FFD8 /* Frameworks */,
+				195B2B348054230FDD0AE443C84582CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D14B80420695C092CF50F2BC41C6945 /* PBXTargetDependency */,
+			);
+			name = "Pods-WayPoint3.0Tests";
+			productName = "Pods-WayPoint3.0Tests";
+			productReference = 115BCE45C9256FB90DEAC80F36441EEE /* Pods_WayPoint3_0Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		398D978AEA89D5CB0F597536D5164BB5 /* Pods-WayPoint3.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AD02F7A6BB8A994293A8FEFC1310F3C /* Build configuration list for PBXNativeTarget "Pods-WayPoint3.0" */;
+			buildPhases = (
+				4C3EDA5BD3430CF0676876256DCEAFBA /* Headers */,
+				C5693816C3C37485FD4C5A5FBFC0F655 /* Sources */,
+				2A1F730B1F6CADAE5B82FAF9418CA337 /* Frameworks */,
+				0620D854EB99295F0B028A027DB1C8DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4FA194A9DB65368BFB5115BFC94D165 /* PBXTargetDependency */,
+			);
+			name = "Pods-WayPoint3.0";
+			productName = "Pods-WayPoint3.0";
+			productReference = B653DD5E78F8C1EC77FFAF2CF4F7B2AC /* Pods_WayPoint3_0.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BB32E97F940371D391F6B8FB4F24AC15 /* ARCL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 658276A62EBF92155929002D7710C1C3 /* Build configuration list for PBXNativeTarget "ARCL" */;
+			buildPhases = (
+				BCA04B232AF0487CA3F13412E719C143 /* Headers */,
+				5C14277E551EB3B430CDA36A90C552EE /* Sources */,
+				142AE6EB8407191844074817A18C2723 /* Frameworks */,
+				DCC251FBD2AD9081B36120C436790BEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARCL;
+			productName = ARCL;
+			productReference = C7ADEE321186A59406F16630332B9832 /* ARCL.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 25A1FC8AA4DD6404212D9BD287A6810C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB32E97F940371D391F6B8FB4F24AC15 /* ARCL */,
+				398D978AEA89D5CB0F597536D5164BB5 /* Pods-WayPoint3.0 */,
+				0053E5DDD37DDD627FF7A533B8526CF5 /* Pods-WayPoint3.0-WayPoint3.0UITests */,
+				22AF90A92C10CAA16B7172A272B7B523 /* Pods-WayPoint3.0Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0620D854EB99295F0B028A027DB1C8DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		195B2B348054230FDD0AE443C84582CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C72DD919B8E84BCB7F2098BD46DD55C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC251FBD2AD9081B36120C436790BEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5608F6D0846A76ECC076EC4071122322 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D610959943DC13B87A77C9B51CDA21A /* Pods-WayPoint3.0Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C14277E551EB3B430CDA36A90C552EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61056C6EFFF75EB7F6B6F09C9497BD60 /* ARCL-dummy.m in Sources */,
+				C90E2A2B47EE101E2B491A592DC42137 /* ARKit_CoreLocation.swift in Sources */,
+				BF52365B4F8F2C456C5F8251FE0E7577 /* AttributedType.swift in Sources */,
+				04208E574B8A3FBEB914F997509C5299 /* BaseTypes+Extensions.swift in Sources */,
+				7BD57C52C8BE3A84AA0B2EBFAE0D9704 /* CGPoint+Extensions.swift in Sources */,
+				4F320F5D6C312452A344A64421EDE07E /* CLLocation+Extensions.swift in Sources */,
+				7BA73522DF205C8C8123142B55A66EE2 /* FloatingPoint+Radians.swift in Sources */,
+				066FD08EF5D9078C9E733D2DFF581651 /* LocationAnnotationNode.swift in Sources */,
+				4AAE0F3B409B86906FF07BB9B7AD995D /* LocationManager.swift in Sources */,
+				F812FD15FA459C7339E47E72A9691C6F /* LocationNode.swift in Sources */,
+				D871152B03BA39E280878D06BB3DBFBA /* PolylineNode.swift in Sources */,
+				752831D33A377197EB5026D4D597B60B /* ScalingScheme.swift in Sources */,
+				175518AB4723AA996812B2F20760A158 /* SceneLocationEstimate+Extensions.swift in Sources */,
+				6841F73E84D853E5D8D167C735908F74 /* SceneLocationEstimate.swift in Sources */,
+				CCE20801F233D2A46FAF52EB54EA62D0 /* SceneLocationManager.swift in Sources */,
+				41BE9347A5E9DD88A94C29A25193FAE6 /* SceneLocationView+ARSCNViewDelegate.swift in Sources */,
+				B17AF6BEC2C03C7D8817BDC77D0ABCC8 /* SceneLocationView.swift in Sources */,
+				49A3EE3048F4C134E58733507823B611 /* SceneLocationViewEstimateDelegate.swift in Sources */,
+				41F024CE6F5E5CC67308ADD03CB4EEB9 /* SCNNode+Extensions.swift in Sources */,
+				7C781B781A43BF12E389B0E56F8B02B0 /* SCNVector3+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5693816C3C37485FD4C5A5FBFC0F655 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33677423A883A0E5400A0EFFAB97F0A4 /* Pods-WayPoint3.0-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC113C9CA3EA36836A4001E1C17E15A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CCB7C9B423B65F33BA46AE6959D7A20 /* Pods-WayPoint3.0-WayPoint3.0UITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4971FD15249868A32849DFA14C36ACE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ARCL;
+			target = BB32E97F940371D391F6B8FB4F24AC15 /* ARCL */;
+			targetProxy = D63C2CA8B577EA82B318A0E7D6B21094 /* PBXContainerItemProxy */;
+		};
+		4D14B80420695C092CF50F2BC41C6945 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-WayPoint3.0";
+			target = 398D978AEA89D5CB0F597536D5164BB5 /* Pods-WayPoint3.0 */;
+			targetProxy = 3D90D751ABB731B066478F0886B25EC0 /* PBXContainerItemProxy */;
+		};
+		D4FA194A9DB65368BFB5115BFC94D165 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ARCL;
+			target = BB32E97F940371D391F6B8FB4F24AC15 /* ARCL */;
+			targetProxy = EAE0981C6DA95043A186FC52EAF2B49E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		257497152829C177993B5EC99C1D227A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		29B2442296CA9AD5838DA2F32BE2A6CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22FC6DB2F3B3106FF5442B0A05212BB5 /* Pods-WayPoint3.0-WayPoint3.0UITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WayPoint3.0-WayPoint3.0UITests/Pods-WayPoint3.0-WayPoint3.0UITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WayPoint3.0-WayPoint3.0UITests/Pods-WayPoint3.0-WayPoint3.0UITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3707A6D5CFA9C2ADD6AED1CD4A63CAB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80BF347BEC52EB5EF6D6C237EFA544AC /* Pods-WayPoint3.0Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WayPoint3.0Tests/Pods-WayPoint3.0Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WayPoint3.0Tests/Pods-WayPoint3.0Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5649D7135EC89B48E32BBEFD7AD85257 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EF4C23BDBA35F2516B68AF343884D9A /* Pods-WayPoint3.0-WayPoint3.0UITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WayPoint3.0-WayPoint3.0UITests/Pods-WayPoint3.0-WayPoint3.0UITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WayPoint3.0-WayPoint3.0UITests/Pods-WayPoint3.0-WayPoint3.0UITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7820B6E3B09D9909462E8C256F69E8E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3351E47BB5F74D08DFE2B1C73E3C6FE3 /* Pods-WayPoint3.0.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WayPoint3.0/Pods-WayPoint3.0-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WayPoint3.0/Pods-WayPoint3.0.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7BDD6D85AA62EC4645FC83ED2FDB1247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5763E96DD3F6A6039286627D58CDA64C /* ARCL.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ARCL/ARCL-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ARCL/ARCL-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ARCL/ARCL.modulemap";
+				PRODUCT_MODULE_NAME = ARCL;
+				PRODUCT_NAME = ARCL;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B776DB8460D5EB16EC633A3B0C052056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D52D1CC40FC55A72D3162430592F799 /* ARCL.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ARCL/ARCL-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ARCL/ARCL-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ARCL/ARCL.modulemap";
+				PRODUCT_MODULE_NAME = ARCL;
+				PRODUCT_NAME = ARCL;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		EF7874241781A96D1A87E3D7BBB22EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C89C0AF8AF7E931F6A977A49AA70784 /* Pods-WayPoint3.0Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WayPoint3.0Tests/Pods-WayPoint3.0Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WayPoint3.0Tests/Pods-WayPoint3.0Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F78FBECF28335287BC6841982D9F1C34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0C9E8E2C3097351DA7326C97D38EB4F /* Pods-WayPoint3.0.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WayPoint3.0/Pods-WayPoint3.0-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WayPoint3.0/Pods-WayPoint3.0.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AD02F7A6BB8A994293A8FEFC1310F3C /* Build configuration list for PBXNativeTarget "Pods-WayPoint3.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7820B6E3B09D9909462E8C256F69E8E7 /* Debug */,
+				F78FBECF28335287BC6841982D9F1C34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
+				257497152829C177993B5EC99C1D227A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B0D2A5987D1353139BDBDD4165FFCE2 /* Build configuration list for PBXNativeTarget "Pods-WayPoint3.0-WayPoint3.0UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5649D7135EC89B48E32BBEFD7AD85257 /* Debug */,
+				29B2442296CA9AD5838DA2F32BE2A6CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		658276A62EBF92155929002D7710C1C3 /* Build configuration list for PBXNativeTarget "ARCL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BDD6D85AA62EC4645FC83ED2FDB1247 /* Debug */,
+				B776DB8460D5EB16EC633A3B0C052056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D310A836FFF88E39B0427C7560270251 /* Build configuration list for PBXNativeTarget "Pods-WayPoint3.0Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF7874241781A96D1A87E3D7BBB22EA8 /* Debug */,
+				3707A6D5CFA9C2ADD6AED1CD4A63CAB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
