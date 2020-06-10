@@ -2,8 +2,6 @@
 //  ViewController.swift
 //  WayPoint3.0
 //
-//  Created by ruby carrasco on 3/3/20.
-//  Copyright © 2020 SCU. All rights reserved.
 //
 
 import UIKit
@@ -46,7 +44,7 @@ class ViewController: UIViewController {
        
         mapView.delegate = self
         
-        //POI objects to show on map
+        //Point of Interest (POI) objects to show on map
         let Benson = POIs(title: "Benson Center",
                            locationName: "SCU",
                            coordinate: CLLocationCoordinate2D(latitude: 37.347726, longitude: -121.939435))
@@ -109,17 +107,13 @@ class ViewController: UIViewController {
         mapView.addAnnotation(Vari)
         
         //annotation for testing purposes
-        let Corner = POIs(title: "Corner House",
+        let Corner = POIs(title: "Corner Business",
                            locationName: "Sj",
                            coordinate: CLLocationCoordinate2D(latitude: 37.2975493, longitude: -121.8382150))
         mapView.addAnnotation(Corner)
        
     }
 }
-
-
-
-
 
 
 func directionsRequest(to mapLocation: MKMapItem) -> MKDirections.Request {
@@ -198,13 +192,9 @@ extension ViewController: MKMapViewDelegate {
             viewController.routes = response.routes
         }
         
-        
         self.present(viewController, animated: true)
-        
-        
-      //location.mapItem().openInMaps(launchOptions: launchOptions)
+
     }
-    
     
 }
 
