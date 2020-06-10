@@ -18,6 +18,6 @@ class Utils {
 
     class func createViewController<T: UIViewController>(_ identifier: String, storyboard: String = "Main") -> T {
         return Utils.getStoryboard(storyboard)
-            .instantiateViewController(withIdentifier: identifier) as! T // swiftlint:disable:this force_cast
+            .instantiateViewController(withIdentifier: identifier) as! T 
     }
 }
